@@ -26,19 +26,19 @@ The difference between this and [JSON schema](http://json-schema.org/) is that j
     var ja = require('jsonAssert');
 
     // basic things must match
-    ja.isValid({ a: 3}, { b: 4}); // false
-    ja.isValid({ a: 3}, { a: 3}); // true
+    ja.isEqual({ a: 3}, { b: 4}); // false
+    ja.isEqual({ a: 3}, { a: 3}); // true
 
     // we don't care what the value is as long as it exists.
-    ja.isValid({ a: ja.dontCare }, { a: 3}); // true
+    ja.isEqual({ a: ja.dontCare }, { a: 3}); // true
 
     // it must exist and match the type (typeof)
-    ja.isValid({ a: ja.matchType('string') }, { a: 4}); // false
-    ja.isValid({ a: ja.matchType('string') }, { a: "4"}); // true
+    ja.isEqual({ a: ja.matchType('string') }, { a: 4}); // false
+    ja.isEqual({ a: ja.matchType('string') }, { a: "4"}); // true
 
     // we don't care if it exists or not
-    ja.isValid({ a: ja.optional }, { a: 4 }); // true
-    ja.isValid({ a: ja.optional }, { }); // true
+    ja.isEqual({ a: ja.optional }, { a: 4 }); // true
+    ja.isEqual({ a: ja.optional }, { }); // true
 
 
 Here is a more realistic example.
@@ -51,7 +51,7 @@ Here is a more realistic example.
       request(url, function (error, response, body) {
         assert(!error);
         assert.equal(response.statusCode, 200);
-        assert(ja.isValid(expected, JSON.parse(body)));
+        assert(ja.isEqual(expected, JSON.parse(body)));
       });
     }
 

@@ -1,6 +1,6 @@
 {
-  "name": "jsonAssert",
-  "version": "1.0.0",
+  "name": "json-assert",
+  "version": "1.0.1",
   "description": "check json object matches template",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/5app/jsonAssert.git"
+    "url": "git://github.com/5app/json-assert.git"
   },
   "keywords": [
     "json",
@@ -18,7 +18,7 @@
   "author": "James Brooks <kerspoon@gmail.com> (http://5app.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/5app/jsonAssert/issues"
+    "url": "https://github.com/5app/json-assert/issues"
   },
   "devDependencies": {
     "mocha": "^2.2.1"

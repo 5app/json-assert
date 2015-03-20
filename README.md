@@ -3,15 +3,15 @@ JSON Assert
 
 This program checks that a javascript object matches another. The main use case is for use in testing a JSON API.
 
-The difference between this and [_.isEqual](http://underscorejs.org/#isEqual) is that jsonAssert accepts a function which will run that can perform addition checks. See the examples below.
+The difference between this and [_.isEqual](http://underscorejs.org/#isEqual) is that json-assert accepts a function which will run that can perform addition checks. See the examples below.
 
-The difference between this and [JSON schema](http://json-schema.org/) is that jsonAssert is less verbose, but it is also less flexible.
+The difference between this and [JSON schema](http://json-schema.org/) is that json-assert is less verbose, but it is also less flexible.
 
 
 ## Installation
 
 
-    npm install jsonAssert --save
+    npm install json-assert --save
 
 
 ## Tests
@@ -23,7 +23,7 @@ The difference between this and [JSON schema](http://json-schema.org/) is that j
 ## Usage
 
 
-    var ja = require('jsonAssert');
+    var ja = require('json-assert');
 
     // basic things must match
     ja.isEqual({ a: 3}, { b: 4}); // false
@@ -44,7 +44,7 @@ The difference between this and [JSON schema](http://json-schema.org/) is that j
 Here is a more realistic example.
 
 
-    var ja = require('jsonAssert');
+    var ja = require('json-assert');
     var request = require('request');
 
     function testAjax(url, expected) {

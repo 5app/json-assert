@@ -59,7 +59,7 @@ function check(src, dst, expectedResult) {
   );
 }
 
-describe('jsonAssert', function() {
+describe('json-assert', function() {
   describe('isEqual', function() {
 
     it('should have basic objects as different from each other', function() {

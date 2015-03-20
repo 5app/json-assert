@@ -55,7 +55,7 @@ function check(src, dst, expectedResult) {
   assert.equal(
     jsonAssert.isEqual(src, dst, true),
     expectedResult,
-    "expected(" + expectedResult + ") " + src + " " + dst
+    "expected(" + expectedResult + ") " + JSON.stringify(src) + " " + JSON.stringify(dst)
   );
 }
 
@@ -117,6 +117,35 @@ describe('json-assert', function() {
         }, true);
 
       }
+    });
+
+    it('should check for missing parts', function() {
+
+      var expected = [{
+        name: 'admin',
+        isSpecial: true
+      }, {
+        name: 'everyone',
+        isSpecial: true
+      }, {
+        name: 'testGroup',
+        isSpecial: false,
+        asdasdasd: 4 // extra param
+      }];
+
+      var actual = [{
+        name: 'admin',
+        isSpecial: true
+      }, {
+        name: 'everyone',
+        isSpecial: true
+      }, {
+        name: 'testGroup',
+        isSpecial: false
+      }];
+
+      check(expected, actual, false);
+
     });
 
   });

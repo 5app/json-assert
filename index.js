@@ -36,7 +36,6 @@ exports.optionalMatchType = function(type) {
 
 exports.isEqual = function(src, dst, silence) {
 
-  var len, res, i;
 
   var fullDst = JSON.stringify(dst, null, 2);
 
@@ -49,6 +48,8 @@ exports.isEqual = function(src, dst, silence) {
   }
 
   function innerCheck(name, src, dst) {
+
+    var len, res, i;
 
     // if the test has given us a function, evaluate that.
     if (typeof src === 'function') {
